@@ -7,7 +7,32 @@
     <title>Rock-Paper-Scissors-Lizard-Spock</title>
 </head>
 <body>
-    
+    <!--Header-->
+    <header>
+        <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+    </header>
+
+    <!--Main game area-->
+    <main>
+        <!--Scoreboard-->
+        <section id="scoreboard">
+            <p>Player Score: <span id="player-score">0</span></p>
+            <p>Computer Score: <span id="computer-score">0</span></p>
+        </section>
+        <!--Game-Message-->
+        <section id="game-message">
+            <p>Make your move!</p>
+        </section>
+        <!--Options-->
+        <section id="options">
+            <button class="option" data-choice="rock">Rock</button>
+            <button class="option" data-choice="paper">Paper</button>
+            <button class="option" data-choice="scissors">Scissors</button>
+            <button class="option" data-choice="lizard">Lizard</button>
+            <button class="option" data-choice="spock">Spock</button>
+        </section>
+    </main>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
