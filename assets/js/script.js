@@ -1,6 +1,9 @@
 // Wait for the DOM to finish loading before running the game
 // Get the option elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function () {
+  // Score variables
+  let playerScore = 0;
+  let computerScore = 0;
   // Select all game option buttons(rock, paper, scissors, lizard, spock)
   const options = document.querySelectorAll(".option");
 
@@ -11,17 +14,24 @@ document.addEventListener("DOMContentLoaded", function () {
       let computerChoice = getComputerChoice();
       // Decide the winner
       let result = decideWinner(playerChoice, computerChoice);
-      // Logging player's and computer's choice and result for debugging
+      // Logging player's choice, computer's choice and result for debugging
       console.log(`Player chose: ${playerChoice}, Computer chose: ${computerChoice}, Result: ${result}`);
 
-      //Display message with the game result
+     //Display message with the game result
     if (result === "win") {
       alert(`Winner! ${playerChoice} beats ${computerChoice}`);
+      // Increment player score by 1
+      playerScore++;
     } else if (result === "lose") {
       alert(`Loser! ${computerChoice} beats ${playerChoice}`);
+      // Increment computer score by 1
+      computerScore++;
     } else {
       alert(`Ohh! It's a Tie! You both selected ${computerChoice}`);
     }
+    
+    //Update the Scoreboard
+    document.getElementById("player-score").textContent = playerScore;
   })
 
   // Function to generate the computers choice random
