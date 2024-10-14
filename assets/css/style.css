@@ -16,6 +16,9 @@ h1 {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
     font-size: 30px;
     padding: 30px;
 }
@@ -24,6 +27,10 @@ main {
     margin-bottom: 20px;
     color: black;
     font-size: 30px;
+}
+
+#game-message {
+    font-size: 40px;
 }
 
 #options button {
@@ -38,4 +45,5 @@ main {
 
 #options button:hover {
     background-color: rgb(48, 180, 151);
+    transform: scale(1.1);
 }
