@@ -2,7 +2,7 @@
 // Get the option elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function () {
   // Select all game option buttons(rock, paper, scissors, lizard, spock)
-  let options = document.querySelectorAll(".option");
+  const options = document.querySelectorAll(".option");
 
   // Add elent listeners to all buttons
   for (let option of options) {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (result === "lose") {
       alert(`Loser! ${computerChoice} beats ${playerChoice}`);
     } else {
-      alert(`Ohh! It's a Tie!`);
+      alert(`Ohh! It's a Tie! You both selected ${computerChoice}`);
     }
   })
 
@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   function decideWinner(playerChoice, computerChoice) {
     // Using "const" as rules won't change
+    // Lookup table
     const winRules = {
       rock: ["scissors", "lizard"],
       paper: ["rock", "spock"],
