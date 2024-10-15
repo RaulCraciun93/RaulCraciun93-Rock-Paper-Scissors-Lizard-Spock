@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // Logging player's choice, computer's choice and result for debugging
       console.log(`Player chose: ${playerChoice}, Computer chose: ${computerChoice}, Result: ${result}`);
 
-     //Display message with the game result
+     //Display alert message with the game result
     if (result === "win") {
-      alert(`Winner! ${playerChoice} beats ${computerChoice}`);
+      alert(`Winner!👍🏼 ${playerChoice} beats ${computerChoice}`);
       // Increment player score by 1
       playerScore++;
     } else if (result === "lose") {
-      alert(`Loser! ${computerChoice} beats ${playerChoice}`);
+      alert(`Loser!👎🏼 ${computerChoice} beats ${playerChoice}`);
       // Increment computer score by 1
       computerScore++;
     } else {
@@ -32,6 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
     
     //Update the Scoreboard
     document.getElementById("player-score").textContent = playerScore;
+    document.getElementById("computer-score").textContent = computerScore;
+
+    // Display game result in the game section
+    let gameMessage = document.getElementById(#game-message);
+    
+
   })
 
   // Function to generate the computers choice random
