@@ -36,7 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Display game result in the game section
     let gameMessage = document.getElementById(#game-message);
-    
+    if (result === "win") {
+      gameMessage = `WINNER! ${playerChoice} beats ${computerChoice}`;
+    } else if (result === "lose") {
+      gameMessage = `LOSER! ${computerChoice} beats ${playerChoice}`;
+    } else {
+      gameMessage = `Ohh! It's a Tie! You both selected ${computerChoice}`;
+    }
+    console.log(gameMessage);
 
   })
 
@@ -70,7 +77,15 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       return "lose";
     }
-  }  
+  }
+
+  function bestOutOfFive() {
+
+  }
+
+  function restartGame() {
+    
+  }
 }
 
 });
