@@ -33,7 +33,13 @@ The **Rock Paper Scissors Lizard Spock** game is an advanced version of the clas
 
 #### Features
 
-#### Technologies used
+#### Technologies used:
+
+- **HTML5** for structure and content.
+- **CSS3** for styling the game.
+- **JavaScript** for game logic and user interactions,
+- **Google Fonts** for typography.
+- 
 
 #### Testing
 
