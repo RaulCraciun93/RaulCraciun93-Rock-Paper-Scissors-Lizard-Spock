@@ -34,18 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("player-score").textContent = playerScore;
     document.getElementById("computer-score").textContent = computerScore;
 
-    // Display game result in the game section
-    let gameMessage = document.getElementById(#game-message);
-    if (result === "win") {
-      gameMessage = `WINNER! ${playerChoice} beats ${computerChoice}`;
-    } else if (result === "lose") {
-      gameMessage = `LOSER! ${computerChoice} beats ${playerChoice}`;
-    } else {
-      gameMessage = `Ohh! It's a Tie! You both selected ${computerChoice}`;
-    }
-    console.log(gameMessage);
-
-  })
+    showMessage(playerChoice, computerChoice, result)
+    
+  });
 
   // Function to generate the computers choice random
   function getComputerChoice() {
@@ -55,38 +46,55 @@ document.addEventListener("DOMContentLoaded", function () {
     return choices[randomIndex];
   }
 
-  /**
-   * Function to decide the winner comparing playerChoice adn computerChoice
-   * Returns "win", "lose" or "tie"
-   */
-  function decideWinner(playerChoice, computerChoice) {
-    // Using "const" as rules won't change
-    // Lookup table
-    const winRules = {
-      rock: ["scissors", "lizard"],
-      paper: ["rock", "spock"],
-      scissors: ["paper", "lizard"],
-      lizard: ["spock", "paper"],
-      spock: ["scissors", "rock"]
-    };
-
-    if (playerChoice === computerChoice) {
-      return "tie";
-    } else if (winRules[playerChoice].includes(computerChoice)) {
-      return "win";
-    } else {
-      return "lose";
-    }
+ 
   }
+ });
+function showMessage(playerChoice, computerChoice, result) {
+  
 
-  function bestOutOfFive() {
+ // Display game result in the game section ???
+ let gameMessage = document.getElementById("game-message");
+ console.log(gameMessage);
+ if (result === "win") {
+   gameMessage.innerText = `WINNER! ${playerChoice} beats ${computerChoice}`;
+ } else if (result === "lose") {
+   gameMessage.innerText = `LOSER! ${computerChoice} beats ${playerChoice}`;
+ } else {
+   gameMessage.innerText = `Ohh! It's a Tie! You both selected ${computerChoice}`;
+ }
+ console.log(gameMessage);
 
-  }
-
-  function restartGame() {
-    
-  }
 }
 
-});
+  /**
+  * Function to decide the winner comparing playerChoice adn computerChoice
+  * Returns "win", "lose" or "tie"
+  */
+  function decideWinner(playerChoice, computerChoice) {
+  // Using "const" as rules won't change
+  // Lookup table
+  const winRules = {
+    rock: ["scissors", "lizard"],
+    paper: ["rock", "spock"],
+    scissors: ["paper", "lizard"],
+    lizard: ["spock", "paper"],
+    spock: ["scissors", "rock"]
+  };
 
+  if (playerChoice === computerChoice) {
+    return "tie";
+  } else if (winRules[playerChoice].includes(computerChoice)) {
+    return "win";
+  } else {
+    return "lose";
+  }
+
+};
+
+function bestOutOfFive() {
+
+};
+
+function restartGame() {
+
+};
