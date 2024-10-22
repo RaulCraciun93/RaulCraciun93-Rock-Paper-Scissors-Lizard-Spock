@@ -42,7 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("computer-score").textContent = computerScore;
 
     showMessage(playerChoice, computerChoice, result)
+
+    // Check for best out of 5
+    bestOutOfFive();
   }); 
+
+  // Add event listener to restart button
+  document.getElementById("restart-btn").addEventListener("click", restartGame);
 
   // Function to generate the computers choice random
   function getComputerChoice() {
@@ -56,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function showMessage(playerChoice, computerChoice, result) {
   
- // Display game result in the game section ???
+ // Display game result in the game section
  let gameMessage = document.getElementById("game-message");
  console.log(gameMessage);
  if (result === "win") {
@@ -93,6 +99,7 @@ function showMessage(playerChoice, computerChoice, result) {
   }
 };
 
+// Function to display the overall winner in a best out of 5
 function bestOutOfFive() {
   if (playerWin === 3) {
     alert("Congratulation! You won best out of 5!");
@@ -101,6 +108,15 @@ function bestOutOfFive() {
   }
 };
 
+// Function to restart the game by resetting the score and wins
 function restartGame() {
+  playerScore = 0;
+  computerScore = 0;
+  playerWin = 0;
+  computerWin = 0;
+
+  document.getElementById("player-score").innerText = playerScore;
+  document.getElementById("computer-score").innerText = computerScore;
+  document.getElementById("game-message").innerText = "New Game! Make your move!";
 
 };
