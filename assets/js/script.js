@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Score variables
   let playerScore = 0;
   let computerScore = 0;
+  let playerWin = 0;
+  let computerWin = 0;
+
   // Select all game option buttons(rock, paper, scissors, lizard, spock)
   const options = document.querySelectorAll(".option");
 
@@ -22,10 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(`Winner!👍🏼 ${playerChoice} beats ${computerChoice}`);
       // Increment player score by 1
       playerScore++;
+      // Increment player wins by 1
+      playerWin++;
     } else if (result === "lose") {
       alert(`Loser!👎🏼 ${computerChoice} beats ${playerChoice}`);
       // Increment computer score by 1
       computerScore++;
+      // Increment computer wins by 1
+      computerWin++;
     } else {
       alert(`Ohh! It's a Tie! You both selected ${computerChoice}`);
     }
@@ -35,8 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("computer-score").textContent = computerScore;
 
     showMessage(playerChoice, computerChoice, result)
-    
-  });
+  }); 
 
   // Function to generate the computers choice random
   function getComputerChoice() {
@@ -45,13 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
   }
-
- 
-  }
+ }
  });
+
 function showMessage(playerChoice, computerChoice, result) {
   
-
  // Display game result in the game section ???
  let gameMessage = document.getElementById("game-message");
  console.log(gameMessage);
@@ -63,8 +67,7 @@ function showMessage(playerChoice, computerChoice, result) {
    gameMessage.innerText = `Ohh! It's a Tie! You both selected ${computerChoice}`;
  }
  console.log(gameMessage);
-
-}
+};
 
   /**
   * Function to decide the winner comparing playerChoice adn computerChoice
@@ -88,11 +91,14 @@ function showMessage(playerChoice, computerChoice, result) {
   } else {
     return "lose";
   }
-
 };
 
 function bestOutOfFive() {
-
+  if (playerWin === 3) {
+    alert("Congratulation! You won best out of 5!");
+  } else if (computerWin === 3) {
+    alert("Ohh no! The computer won best out of 5!");
+  }
 };
 
 function restartGame() {
