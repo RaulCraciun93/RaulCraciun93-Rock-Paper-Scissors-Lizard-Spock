@@ -20,22 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
       // Logging player's choice, computer's choice and result for debugging
       console.log(`Player chose: ${playerChoice}, Computer chose: ${computerChoice}, Result: ${result}`);
 
-     //Display alert message with the game result
+     // Update scores 
     if (result === "win") {
-      alert(`Winner!👍🏼 ${playerChoice} beats ${computerChoice}`);
       // Increment player score by 1
       playerScore++;
       // Increment player wins by 1
       playerWin++;
     } else if (result === "lose") {
-      alert(`Loser!👎🏼 ${computerChoice} beats ${playerChoice}`);
       // Increment computer score by 1
       computerScore++;
       // Increment computer wins by 1
       computerWin++;
-    } else {
-      alert(`Ohh! It's a Tie! You both selected ${computerChoice}`);
-    }
+    } 
     
     //Update the Scoreboard
     document.getElementById("player-score").textContent = playerScore;
@@ -101,10 +97,14 @@ function showMessage(playerChoice, computerChoice, result) {
 
 // Function to display the overall winner in a best out of 5
 function bestOutOfFive() {
+  let gameMessage = document.getElementById("game-message");
+
   if (playerWin === 3) {
-    alert("Congratulation! You won best out of 5!");
+    gameMessage.innerText = "Congratulations! You won the best out of 5!";
+    restartGame();
   } else if (computerWin === 3) {
-    alert("Ohh no! The computer won best out of 5!");
+    gameMessage.innerText = "Oh no! You lost the best out of 5!";
+    restartGame();
   }
 };
 
@@ -115,8 +115,8 @@ function restartGame() {
   playerWin = 0;
   computerWin = 0;
 
-  document.getElementById("player-score").innerText = playerScore;
-  document.getElementById("computer-score").innerText = computerScore;
-  document.getElementById("game-message").innerText = "New Game! Make your move!";
+  document.getElementById("player-score").textContent = playerScore;
+  document.getElementById("computer-score").textContent = computerScore;
+  document.getElementById("game-message").textContent = "New Game! Make your move!";
 
 };
