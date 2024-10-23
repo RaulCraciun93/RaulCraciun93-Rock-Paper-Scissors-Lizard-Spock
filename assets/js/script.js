@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let computerScore = 0;
   let playerWin = 0;
   let computerWin = 0;
+  // Variable to check if the game is over
+  letgameOver = false;
 
   // Select all game option buttons(rock, paper, scissors, lizard, spock)
   const options = document.querySelectorAll(".option");
@@ -39,8 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showMessage(playerChoice, computerChoice, result)
 
-    // Check for best out of 5
-    bestOutOfFive();
+    
   }); 
 
   // Add event listener to restart button
@@ -101,9 +102,11 @@ function bestOutOfFive() {
 
   if (playerWin === 3) {
     gameMessage.innerText = "Congratulations! You won the best out of 5!";
+    console.log("Player wins best out of 5");
     restartGame();
   } else if (computerWin === 3) {
     gameMessage.innerText = "Oh no! You lost the best out of 5!";
+    console.log("Computer wins best out of 5");
     restartGame();
   }
 };
@@ -118,5 +121,7 @@ function restartGame() {
   document.getElementById("player-score").textContent = playerScore;
   document.getElementById("computer-score").textContent = computerScore;
   document.getElementById("game-message").textContent = "New Game! Make your move!";
+
+  console.log("Game restarted!")
 
 };
