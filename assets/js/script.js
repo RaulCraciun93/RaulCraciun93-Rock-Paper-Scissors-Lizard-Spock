@@ -12,9 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Select all game option buttons(rock, paper, scissors, lizard, spock)
   const options = document.querySelectorAll(".option");
 
-  // Add elent listeners to all buttons
+  // Add event listeners to all buttons
   for (let option of options) {
     option.addEventListener("click", function () {
+      // No more click if the game is over
+      if (gameOver) return;
       let playerChoice = this.getAttribute("data-choice");
       let computerChoice = getComputerChoice();
       // Decide the winner
@@ -35,11 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
       computerWin++;
     } 
     
-    //Update the Scoreboard
+    // Update the Scoreboard
     document.getElementById("player-score").textContent = playerScore;
     document.getElementById("computer-score").textContent = computerScore;
 
-    showMessage(playerChoice, computerChoice, result)
+    // Display message with game result
+    showMessage(playerChoice, computerChoice, result);
 
     
   }); 
@@ -103,10 +106,14 @@ function bestOutOfFive() {
   if (playerWin === 3) {
     gameMessage.innerText = "Congratulations! You won the best out of 5!";
     console.log("Player wins best out of 5");
+    // Stop the game
+    gameOver = true;
     restartGame();
   } else if (computerWin === 3) {
     gameMessage.innerText = "Oh no! You lost the best out of 5!";
     console.log("Computer wins best out of 5");
+    // Stop the game
+    gameOver = true;
     restartGame();
   }
 };
