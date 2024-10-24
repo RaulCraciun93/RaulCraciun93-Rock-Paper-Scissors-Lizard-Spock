@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let playerWin = 0;
   let computerWin = 0;
   // Variable to check if the game is over
-  letgameOver = false;
+  let gameOver = false;
 
   // Select all game option buttons(rock, paper, scissors, lizard, spock)
   const options = document.querySelectorAll(".option");
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     option.addEventListener("click", function () {
       // No more click if the game is over
       if (gameOver) return;
+
       let playerChoice = this.getAttribute("data-choice");
       let computerChoice = getComputerChoice();
       // Decide the winner
@@ -44,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Display message with game result
     showMessage(playerChoice, computerChoice, result);
 
-    
+    bestOutOfFive();
+
   }); 
 
   // Add event listener to restart button
@@ -58,21 +60,21 @@ document.addEventListener("DOMContentLoaded", function () {
     return choices[randomIndex];
   }
  }
- });
+ 
 
-function showMessage(playerChoice, computerChoice, result) {
-  
- // Display game result in the game section
- let gameMessage = document.getElementById("game-message");
- console.log(gameMessage);
- if (result === "win") {
+ // Function to display the result in the message area
+ function showMessage(playerChoice, computerChoice, result) {
+  let gameMessage = document.getElementById("game-message");
+  console.log(gameMessage);
+
+  if (result === "win") {
    gameMessage.innerText = `WINNER! ${playerChoice} beats ${computerChoice}`;
- } else if (result === "lose") {
+  } else if (result === "lose") {
    gameMessage.innerText = `LOSER! ${computerChoice} beats ${playerChoice}`;
- } else {
+  } else {
    gameMessage.innerText = `Ohh! It's a Tie! You both selected ${computerChoice}`;
- }
- console.log(gameMessage);
+  }
+  console.log(gameMessage);
 };
 
   /**
@@ -108,13 +110,11 @@ function bestOutOfFive() {
     console.log("Player wins best out of 5");
     // Stop the game
     gameOver = true;
-    restartGame();
   } else if (computerWin === 3) {
     gameMessage.innerText = "Oh no! You lost the best out of 5!";
     console.log("Computer wins best out of 5");
     // Stop the game
     gameOver = true;
-    restartGame();
   }
 };
 
@@ -124,6 +124,7 @@ function restartGame() {
   computerScore = 0;
   playerWin = 0;
   computerWin = 0;
+  gameOver = false;
 
   document.getElementById("player-score").textContent = playerScore;
   document.getElementById("computer-score").textContent = computerScore;
@@ -132,3 +133,4 @@ function restartGame() {
   console.log("Game restarted!")
 
 };
+});
