@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
   }
- }
+ };
  
 
  // Function to display the result in the message area
@@ -132,5 +132,5 @@ function restartGame() {
 
   console.log("Game restarted!")
 
-};
+}
 });
