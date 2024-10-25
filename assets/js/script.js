@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
       let computerChoice = getComputerChoice();
       // Decide the winner
       let result = decideWinner(playerChoice, computerChoice);
-      // Logging player's choice, computer's choice and result for debugging
-      console.log(`Player chose: ${playerChoice}, Computer chose: ${computerChoice}, Result: ${result}`);
 
      // Update scores 
     if (result === "win") {
@@ -65,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
  // Function to display the result in the message area
  function showMessage(playerChoice, computerChoice, result) {
   let gameMessage = document.getElementById("game-message");
-  console.log(gameMessage);
 
   if (result === "win") {
    gameMessage.innerText = `WINNER! ${playerChoice} beats ${computerChoice}`;
@@ -74,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
    gameMessage.innerText = `Ohh! It's a Tie! You both selected ${computerChoice}`;
   }
-  console.log(gameMessage);
 };
 
   /**
@@ -107,12 +103,10 @@ function bestOutOfFive() {
 
   if (playerWin === 3) {
     gameMessage.innerText = "Congratulations! You won the best out of 5!";
-    console.log("Player wins best out of 5");
     // Stop the game
     gameOver = true;
   } else if (computerWin === 3) {
     gameMessage.innerText = "Oh no! You lost the best out of 5!";
-    console.log("Computer wins best out of 5");
     // Stop the game
     gameOver = true;
   }
@@ -129,8 +123,5 @@ function restartGame() {
   document.getElementById("player-score").textContent = playerScore;
   document.getElementById("computer-score").textContent = computerScore;
   document.getElementById("game-message").textContent = "New Game! Make your move!";
-
-  console.log("Game restarted!")
-
 }
 });
