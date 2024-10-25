@@ -18,25 +18,28 @@
 
     <!--Game area-->
     <main>
-        <!--Scoreboard-->
-        <section id="scoreboard">
-            <p>Player Score: <span id="player-score">0</span></p>
-            <p>Computer Score: <span id="computer-score">0</span></p>
-        </section>
-
-        <!--Game Message-->
         <section>
-            <p id="game-message">Make your move!</p>
+            <!--Scoreboard-->
+            <div id="scoreboard">
+                <p>Player Score: <span id="player-score">0</span></p>
+                <p>Computer Score: <span id="computer-score">0</span></p>
+            </div>
+
+            <!--Game Message-->
+            <div>
+                <p id="game-message">Make your move!</p>
+            </div>
+
+            <!--Options-->
+            <div id="options">
+                <button class="option" data-choice="rock">Rock</button>
+                <button class="option" data-choice="paper">Paper</button>
+                <button class="option" data-choice="scissors">Scissors</button>
+                <button class="option" data-choice="lizard">Lizard</button>
+                <button class="option" data-choice="spock">Spock</button>
+            </div>
         </section>
 
-        <!--Options-->
-        <section id="options">
-            <button class="option" data-choice="rock">Rock</button>
-            <button class="option" data-choice="paper">Paper</button>
-            <button class="option" data-choice="scissors">Scissors</button>
-            <button class="option" data-choice="lizard">Lizard</button>
-            <button class="option" data-choice="spock">Spock</button>
-        </section>
 
         <!-- Restart game button -->
         <button id="restart-btn">Restart Game</button>
