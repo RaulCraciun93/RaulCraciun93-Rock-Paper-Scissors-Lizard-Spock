@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
   }
- };
+ }
  
 
  // Function to display the result in the message area
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
    gameMessage.innerText = `Ohh! It's a Tie! You both selected ${computerChoice}`;
   }
-};
+}
 
   /**
   * Function to decide the winner comparing playerChoice adn computerChoice
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     return "lose";
   }
-};
+}
 
 // Function to display the overall winner in a best out of 5
 function bestOutOfFive() {
@@ -110,7 +110,7 @@ function bestOutOfFive() {
     // Stop the game
     gameOver = true;
   }
-};
+}
 
 // Function to restart the game by resetting the score and wins
 function restartGame() {
