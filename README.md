@@ -9,7 +9,7 @@
  5. [Technologies used](#technologies-used)
  6. [Testing](#testing)
  7. [Screenshots](#screenshots)
- 8. [Acknowledgement](#acknowledgement)
+ 8. [Acknowledgements](#acknowledgements)
  9. [Deployment](#deployment)
 10. [Credits](#credits)
 
@@ -32,7 +32,7 @@ The **Rock Paper Scissors Lizard Spock** game is an advanced version of the clas
 - Lizard beats Spock and Paper.
 - Spock beats Scissors and Rock.
 
-#### Features
+#### Features:
 
 - **Interactive Gameplay**: The player selects an option and the game provides immediate feedback and updates the score after each round.
 - **Score Tracking**: The game displays scores for the player and computer which reset when a new game is started.
@@ -46,14 +46,36 @@ The **Rock Paper Scissors Lizard Spock** game is an advanced version of the clas
 
 - **HTML5** for structure and content.
 - **CSS3** for styling the game.
-- **JavaScript** for game logic and user interactions,
+- **JavaScript** for game logic and user interactions.
 - **Google Fonts** for typography.
-- 
+- **Git & GitHub** for version control and deployment.
 
-#### Testing
+#### Testing:
+
+##### HTML Validation
+The HTML page was tested using [W3C HTML5 Validator](https://validator.w3.org/) and passed with no errors.
+![html screenshot](assets/readme-images/html-validator.png)
+##### CSS Validation
+The CSS was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and passed with no errors.
+![css screenshot](assets/readme-images/css-validator.png)
+##### JS Validation
+The JavaScript was tested using [JSHint](https://jshint.com/). While there are some warnings, these don't affect the functionality of the code.
+![js screenshot](assets/readme-images/js-hint-validation.png)
 
 #### Screenshots
 
+#### Acknowledgements
+
 #### Deployment
+
+This project was deployed using GitHub Pages. https://raulcraciun93.github.io/RaulCraciun93-Rock-Paper-Scissors-Lizard-Spock/
+
+To deploy this project:
+1. Navigate to your GitHub repository.
+2. Go to the "Settings" tab.
+3. Scroll down to the "GitHub Pages" section.
+4. Under "Source", select the main branch and click "Save".
+5. Your project will be published on Github Pages. 
+
 
 #### Credits
