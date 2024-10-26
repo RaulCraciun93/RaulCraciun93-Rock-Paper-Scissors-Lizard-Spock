@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         bestOutOfFive();
       } catch (err) {
-        console.log("Error in playerChoice", err.message);
         return null;
       }
     });
@@ -64,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let randomIndex = Math.floor(Math.random() * choices.length);
         return choices[randomIndex];
       } catch (err) {
-        console.log("Error in getComputerChoice ", err.message);
         return null;
       }
     }
