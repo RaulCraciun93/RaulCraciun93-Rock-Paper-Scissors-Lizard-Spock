@@ -53,15 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to generate the computers choice random
   function getComputerChoice() {
     try {
-        // Using "const" as choices won't change
-        const choices = ["rock", "paper", "scissors", "lizard", "spock"];
-        let randomIndex = Math.floor(Math.random() * choices.length);
-        return choices[randomIndex];
+      // Using "const" as choices won't change
+      const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+      let randomIndex = Math.floor(Math.random() * choices.length);
+      return choices[randomIndex];
     } catch (err) {
-        console.log("Error in getComputerChoice function");
-        // Return "null" if there is an error
-        return null;
+      console.log("Error in getComputerChoice ", err.message);
+      return null;
     }
+  }
  }
  
 
