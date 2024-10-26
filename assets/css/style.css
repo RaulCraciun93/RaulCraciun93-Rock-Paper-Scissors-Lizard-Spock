@@ -75,3 +75,21 @@ main {
     background-color: rgb(48, 180, 151);
     transform: scale(1.1);
 }
+
+#rules-btn {
+    /* Similar style to option and restart buttons to the rules button */
+    background-color: rgb(101, 226, 199);
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    margin: 20px auto;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px rgb(255, 64, 129);
+    cursor: pointer;
+}
+
+#rules-btn:hover {
+    background-color: rgb(48, 180, 151);
+    transform: scale(1.1);
+}
