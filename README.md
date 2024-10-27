@@ -66,6 +66,8 @@ The CSS was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator
 
 The JavaScript was tested using [JSHint](https://jshint.com/). While there are some warnings, these don't affect the functionality of the code.
 ![js screenshot](assets/readme-images/js-hint-validation.png)
+**Note On JSHint Warnings:**
+During the JavaScript validation JSHint showed several warnings, including line 17: functions declared within loops referencing outer scoped variables. This occurs in the event listener for "playerChoice" where more outer variables are referenced within a loop("getComputerChoice", "decideWinner", etc). This setup is intentional to handle game logic and interactions and does not impact the functionality of the code or catch unexpected errors, as these outer scoped variables do not change throughout hte game.
 
 ##### Accessibility
 
